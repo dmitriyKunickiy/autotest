@@ -1,0 +1,18 @@
+{
+  "name": "artur1",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "cypress:open": "cypress open"
+  },
+  "author": "dima",
+  "license": "ISC",
+  "devDependencies": {
+    "cypress": "^13.7.1"
+  },
+  "dependencies": {
+    "@mailsac/api": "^1.0.6",
+    "chai": "^5.1.0"
+  }
+}
