@@ -13,7 +13,7 @@ class Credentials {
         }
         const firstName = `AQA ${returnId}`
         const secondName = `AQA ${returnId}`
-        const email = `AQA${returnId}@yopmail.com`
+        const email = `AQA${returnId}@mailsac.com`
         const password = `Aqa${returnId}+1!`
         const externalCode = `_aqa_external_code${returnId}`
         const project = `_aqa_project${returnId}`

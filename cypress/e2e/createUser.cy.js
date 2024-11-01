@@ -1,37 +1,29 @@
 import invetoryPage from "./pages/invetory.page"
-import CreateLogin from "./pages/login.paga"
 import createUserPage from "./pages/create.user.page"
 import Credentials from "../others/Credentials"
+import mailsac from "../actions/Mailsac"
+import loginPage from "./pages/login.paga"
 
-describe('login', () => {
-    it('show data', ()=>{
+
+describe('Login', () => {
+    let { firstName, secondName, email, password } = Credentials.get()
+    it('Show data', () => {
         cy.visit('https://test.independentspeculator.com')
         createUserPage.clickOpenSignUp()
-        let { firstName: firstname , secondName: secondname, email: email, password: password} = Credentials.get()
-        createUserPage.typeValueToNameFirst(firstname)
-        createUserPage.typeValueToNameSecond(secondname)
+        createUserPage.typeValueToNameFirst(firstName)
+        createUserPage.typeValueToNameSecond(secondName)
         createUserPage.typeValueEmail(email)
         createUserPage.typeValuePassword(password)
         createUserPage.clickReadonlyCheackbox()
-        
-      
-        //cy.wait(500);
-        
-       
-        
-
-        
         createUserPage.clickOpenCheackbox()
         createUserPage.clickOpenCheackbox2()
         createUserPage.clickToNext()
         createUserPage.clickTosignUP()
         invetoryPage.checkPageUrl('/confirm')
-
-
-        
-
-
-
-
-   })
+        cy.wait(5000);
+        mailsac.visitInvitationLinkBySubjectFromArrOfMessages(email)
+        loginPage.typeValueToPasswordField(password)
+        loginPage.typeValueToLoginField(email)
+        loginPage.clickToLoginButton()    
+    })
 })

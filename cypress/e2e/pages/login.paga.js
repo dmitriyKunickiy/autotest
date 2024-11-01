@@ -39,7 +39,5 @@ class LoginPage {
     }
     clickPortfolio() {
         clickToElementbyElement(this.clickPortfolio1)
-    }
-    
-    
+    }  
 } export default new LoginPage()

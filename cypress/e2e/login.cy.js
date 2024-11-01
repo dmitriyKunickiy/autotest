@@ -11,8 +11,6 @@ describe('login', () => {
         loginPage.clickToLoginButton()
         invetoryPage.checkPageUrl('/member-area')
         invetoryPage.checkVisabilityOfLogo()
-        loginPage.clickPortfolio()
-           
-    })
-   
+        loginPage.clickPortfolio()        
+    })   
 })

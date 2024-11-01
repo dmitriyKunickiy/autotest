@@ -2,7 +2,7 @@ import { checkVisabilityElementByElement } from "../../actions/actions"
 
 class InventoryPage {
     checkPageUrl(url) {
-        cy.url().should('includes', url)
+        cy.url().should('includes', url, { timeout: 30000 })
     }
 
     get logo() {
@@ -12,6 +12,4 @@ class InventoryPage {
     checkVisabilityOfLogo() {
         checkVisabilityElementByElement(this.logo)
     }
-    
-   
 } export default new InventoryPage()
